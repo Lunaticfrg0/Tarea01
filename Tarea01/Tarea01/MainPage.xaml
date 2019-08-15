@@ -6,55 +6,59 @@
              mc:Ignorable="d"
              x:Class="Tarea01.MainPage"
              BackgroundColor="#6441A4">
-             
-    <StackLayout VerticalOptions="Center"
+    <ScrollView>
+        <StackLayout VerticalOptions="Center"
                  >
         <!-- Place new controls here -->
 
 
-        <StackLayout>
+        
             <Image Source="twitch.jpg">
 
             </Image>
             
-        </StackLayout>
-        <StackLayout BackgroundColor="White">
+       
+        
 
             <Label Text="Username"
+                   FontSize="26"
                
             />
-            <ScrollView>
+            
                 <Entry  
                        x:Name="entNombre"
                        Placeholder="Nombre"
                        Keyboard="Default"
-           
+                        BackgroundColor="White"
    
                        />
-            </ScrollView>
-        </StackLayout>
+            
+        
      
-        <StackLayout BackgroundColor="White">
+        
             <Label Text="Password" 
+                   FontSize="26"
               
             />
-            <ScrollView>
+           
             <Entry  
                        x:Name="entPassword"
                        Keyboard="Default"
                          IsPassword="True"
-              
+                
+                BackgroundColor="White"
             
                        />
-            </ScrollView>
-        </StackLayout>
+            
+        
         <Button         Text="Iniciar sesion!"            
                         BackgroundColor="#6441A4"
                         TextColor="White"
                         BorderColor="Black"
+                        
                         Clicked="OpenBotton"
                        
                      />
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>
