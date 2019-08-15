@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tarea01.MainPage"
+             BackgroundColor="#6441A4">
+             
+    <StackLayout VerticalOptions="Center"
+                 >
+        <!-- Place new controls here -->
+
+
+        <StackLayout>
+            <Image Source="twitch.jpg">
+
+            </Image>
+            
+        </StackLayout>
+        <StackLayout BackgroundColor="White">
+
+            <Label Text="Username"
+               
+            />
+            <ScrollView>
+                <Entry  
+                       x:Name="entNombre"
+                       Placeholder="Nombre"
+                       Keyboard="Default"
+           
+   
+                       />
+            </ScrollView>
+        </StackLayout>
+     
+        <StackLayout BackgroundColor="White">
+            <Label Text="Password" 
+              
+            />
+            <ScrollView>
+            <Entry  
+                       x:Name="entPassword"
+                       Keyboard="Default"
+                         IsPassword="True"
+              
+            
+                       />
+            </ScrollView>
+        </StackLayout>
+        <Button         Text="Iniciar sesion!"            
+                        BackgroundColor="#6441A4"
+                        TextColor="White"
+                        BorderColor="Black"
+                        Clicked="OpenBotton"
+                       
+                     />
+    </StackLayout>
+
+</ContentPage>
