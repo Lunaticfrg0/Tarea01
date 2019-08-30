@@ -20,17 +20,20 @@
                 <Entry x:Name="EmailEntr" 
                    Placeholder="Email"
                     Text="{Binding newUser.Email}"
-               Keyboard="Default"/>
+               Keyboard="Email"/>
 
 
                 <Entry x:Name="PasswordEntr" 
                    Placeholder="Password"
                     Text="{Binding newUser.Password}"
-               Keyboard="Default"/>
+               Keyboard="Default"
+                       IsPassword="True"/>
+                
 
                 <Entry x:Name="ConfirmEntr" 
                    Placeholder="Confirm Password"
                Keyboard="Default"
+                       IsPassword="True"
                    Text="{Binding newUser.PasswordConfirmed}"/>
 
                 <Button BackgroundColor="#6441A4"
