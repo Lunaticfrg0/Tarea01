@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tarea01.Views.SignInPage"
+             BackgroundColor="#6441A4">
+    <ContentPage.Content>
+        
+            <StackLayout VerticalOptions="CenterAndExpand">
+                
+            <Label Text="{Binding Messeger} " TextColor="Black"  FontSize="23" VerticalOptions="Center"/>
+                
+            <Entry x:Name="UserNameEntr" 
+                   Placeholder="Username"
+                   Keyboard="Default"
+                   Text="{Binding newUser.Username}"/>
+
+                <Entry x:Name="EmailEntr" 
+                   Placeholder="Email"
+                    Text="{Binding newUser.Email}"
+               Keyboard="Default"/>
+
+
+                <Entry x:Name="PasswordEntr" 
+                   Placeholder="Password"
+                    Text="{Binding newUser.Password}"
+               Keyboard="Default"/>
+
+                <Entry x:Name="ConfirmEntr" 
+                   Placeholder="Confirm Password"
+               Keyboard="Default"
+                   Text="{Binding newUser.PasswordConfirmed}"/>
+
+                <Button BackgroundColor="#6441A4"
+                    Text="Sign In!"
+                   Command ="{Binding RegistroCommand}"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

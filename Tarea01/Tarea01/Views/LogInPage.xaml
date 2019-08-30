@@ -4,61 +4,55 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Tarea01.MainPage"
+             x:Class="Tarea01.Views.LogInPage"
              BackgroundColor="#6441A4">
-    <ScrollView>
-        <StackLayout VerticalOptions="Center"
-                 >
-        <!-- Place new controls here -->
-
-
-        
+   
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Image Source="twitch.jpg">
 
             </Image>
-            
-       
-        
+            <Label Text="{Binding Messege} " TextColor="Black"  FontSize="23" VerticalOptions="Center"/>
 
             <Label Text="Username"
                    FontSize="26"
                
             />
-            
-                <Entry  
-                       x:Name="entNombre"
-                       Placeholder="Nombre"
-                       Keyboard="Default"
-                        BackgroundColor="White"
-   
+
+            <Entry  
+                        Text="{Binding User.Username}"
+                       
+                       BackgroundColor="White"
                        />
-            
-        
-     
-        
+
             <Label Text="Password" 
                    FontSize="26"
+                   
               
             />
-           
             <Entry  
-                       x:Name="entPassword"
-                       Keyboard="Default"
+                       
+                      Text="{Binding User.Password}"
                          IsPassword="True"
-                
-                BackgroundColor="White"
+                         BackgroundColor="White"
             
                        />
-            
-        
-        <Button         Text="Iniciar sesion!"            
+
+
+            <Button     Text="Iniciar sesion!"            
+                        BackgroundColor="#6441A4"
+                        TextColor="White"
+                        Command ="{Binding LogInCommand}"
+                     />
+
+            <Button     Text="Sign In!"            
                         BackgroundColor="#6441A4"
                         TextColor="White"
                         BorderColor="Black"
+                        Clicked ="PassToSignIn"
                         
-                        Clicked="OpenBotton"
-                       
                      />
-    </StackLayout>
-    </ScrollView>
+            
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
