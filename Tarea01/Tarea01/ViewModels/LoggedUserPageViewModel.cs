@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Tarea01.Models;
@@ -8,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Tarea01.ViewModels
 {
-    class LoggedUserPageViewModel
+    class LoggedUserPageViewModel : INotifyPropertyChanged
     {
         public Contacts Contacts { get; set; } = new Contacts();
 
@@ -51,5 +52,6 @@ namespace Tarea01.ViewModels
 
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
