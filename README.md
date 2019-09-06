@@ -10,3 +10,6 @@ Practica #1 version mejorada
 ![Alt text](Images/91c3805e-bf31-48e2-89d6-b0cb16aacd9c.jpg?raw=true "Title")
 ![Alt text](Images/97c15201-5d9d-4107-b1db-0a8a28ff1f06.jpg?raw=true "Title")
 ![Alt text](Images/c9748348-105e-4cbc-9027-85ff5683526e.jpg?raw=true "Title")
+![Alt text](Images/Tarea03.jpg?raw=true "Title")
+![Alt text](Images/tarea03b.jpg?raw=true "Title")
+![Alt text](Images/tarea03c.jpg?raw=true "Title")
