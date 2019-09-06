@@ -14,7 +14,7 @@
                    Text="{Binding Contacts.Name}"/>
             <Label Text="Numero:"
                  />
-            <Entry Placeholder="Numero"
+            <Entry Placeholder="Number"
                    Keyboard="Telephone"
                    Text="{Binding Contacts.Number}"/>
             <Button Text="Add!"
