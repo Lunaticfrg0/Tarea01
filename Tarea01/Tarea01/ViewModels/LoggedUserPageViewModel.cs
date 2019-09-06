@@ -25,7 +25,7 @@ namespace Tarea01.ViewModels
                 Contact.Add(Contacts);
             });
 
-            Contact.Add(new Contacts() { Name = "Emilio" , Number= "8096239275"}) ;
+            //Contact.Add(new Contacts() { Name = "Emilio" , Number= "8096239275"}) ;
             AddCommand = new Command(async () =>
             {
                 await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());

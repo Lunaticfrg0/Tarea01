@@ -17,6 +17,9 @@
             <Entry Placeholder="Numero"
                    Keyboard="Telephone"
                    Text="{Binding Contacts.Number}"/>
+            <Button Text="Add!"
+                    
+            />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
