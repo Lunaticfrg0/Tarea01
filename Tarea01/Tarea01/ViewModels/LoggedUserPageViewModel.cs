@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
@@ -13,7 +14,7 @@ namespace Tarea01.ViewModels
     {
         public Contacts Contacts { get; set; } = new Contacts();
 
-        public List<Contacts> Contact { get; set; } = new List<Contacts>();
+        public ObservableCollection<Contacts> Contact { get; set; } = new ObservableCollection<Contacts>();
 
         public ICommand AddCommand { get; set; }
         public ICommand ContactsOptions { get; set; }
@@ -21,7 +22,7 @@ namespace Tarea01.ViewModels
         public LoggedUserPageViewModel()
             
         {
-            MessagingCenter.Subscribe<AddContactPage, Contacts>(this, "ID", ((AddContactPage, Contacts) =>
+            MessagingCenter.Subscribe<AddContactPageViewModel, Contacts>(this, "ID", ((sender, Contacts) =>
             {
                 Contact.Add(Contacts);
             }));
