@@ -12,11 +12,16 @@ namespace Tarea01.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddContactPage : ContentPage
     {
-        public AddContactPage() 
+        public AddContactPage()
         {
             InitializeComponent();
             BindingContext = new AddContactPageViewModel();
         }
 
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new LoggedUserPage());
+
+        }
     }
 }

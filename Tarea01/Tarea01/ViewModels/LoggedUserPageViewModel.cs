@@ -20,12 +20,12 @@ namespace Tarea01.ViewModels
         public LoggedUserPageViewModel()
             
         {
-            MessagingCenter.Subscribe<AddContactPage, Contacts>(this, "Hi", async (sender, Contacts) =>
+            MessagingCenter.Subscribe<AddContactPage, Contacts>(this, "ID", ((AddContactPage, Contacts) =>
             {
                 Contact.Add(Contacts);
-            });
+            }));
 
-            //Contact.Add(new Contacts() { Name = "Emilio" , Number= "8096239275"}) ;
+            Contact.Add(new Contacts() { Name = "Emilio", Number = "8096239275" });
             AddCommand = new Command(async () =>
             {
                 await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
@@ -35,15 +35,15 @@ namespace Tarea01.ViewModels
 
             ContactsOptions = new Command<Contacts>(async (Contacts) =>
             {
-                string option = await App.Current.MainPage.DisplayActionSheet(null, "Cancel", null, "Call " + Contacts.Number, "Edit");
+                string option = await App.Current.MainPage.DisplayActionSheet("Cancelar", "Cancel","Llamar", "Call " + Contacts.Number, "Editar");
 
-                if (option == "Edit")
+                if (option == "Editar")
                 {
                     await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
                 }
                 else
                 {
-                    Device.OpenUri(new Uri(String.Format("tel:{0}", Contacts.Number)));
+                    Device.OpenUri(new Uri(String.Format("Telefono:{0}", Contacts.Number)));
                 }
             });
 

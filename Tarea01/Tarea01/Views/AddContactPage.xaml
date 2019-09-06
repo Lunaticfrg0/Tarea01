@@ -18,6 +18,7 @@
                    Keyboard="Telephone"
                    Text="{Binding Contacts.Number}"/>
             <Button Text="Add!"
+                    Command ="{Binding GetInfoCommand}" 
                     
             />
         </StackLayout>

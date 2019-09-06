@@ -28,7 +28,8 @@
                                 Text="More"  
                                 CommandParameter="{Binding .}"/>
                             <MenuItem 
-                                Text="Delete" 
+                                Command ="{Binding ContactsOptions}"
+                                Text="Edit" 
                                 IsDestructive="True" 
                                 CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Tarea01.Models;
+using Tarea01.Views;
 using Xamarin.Forms;
 
 namespace Tarea01.ViewModels
@@ -14,10 +15,13 @@ namespace Tarea01.ViewModels
 
         public AddContactPageViewModel()
         {
-            var x = Contacts.Name;
-            var y = Contacts.Number;
+            GetInfoCommand = new Command(async () =>
+           {
+               MessagingCenter.Send<AddContactPageViewModel, Contacts>(this, "ID", Contacts);
+               await App.Current.MainPage.Navigation.PopAsync();
+           });
+            
 
-           
         }
     }
 }
