@@ -1,12 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Tarea01.Views.LoggedUserPage">
-  <!--Pages can be added as references or inline-->
-  <ContentPage Title="Home"  IconImageSource="home.jpg"/>
-  <ContentPage Title="Option 1" IconImageSource="Conect.png" />
-  <ContentPage Title="Option 2" IconImageSource="code.png"/>
-</TabbedPage>
+             x:Class="Tarea01.Views.LoggedUserPage"
+             NavigationPage.HasNavigationBar="True"
+            Title="Contacts"
+             >
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="Add" Order="Primary" Icon="Microsoft.png" Text="Add" Priority="0"  Clicked="SendToAddView"/>
+
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Contact}"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="#6441A4"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Command ="{Binding ContactsOptions}"
+                                Text="More"  
+                                CommandParameter="{Binding .}"/>
+                            <MenuItem 
+                                Text="Delete" 
+                                IsDestructive="True" 
+                                CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout Orientation="Vertical">
+
+                            <Label Text="{Binding Name}" 
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
+                                   FontSize="20"/>
+                            <Label Text="{Binding Number}" 
+                                   TextColor="Black"
+                                   FontSize="18"/>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

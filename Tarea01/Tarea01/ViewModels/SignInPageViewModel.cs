@@ -12,7 +12,7 @@ namespace Tarea01.ViewModels
     class SignInPageViewModel : INotifyPropertyChanged
     {
 
-        public NewUser newUser { get; set; } = new NewUser();
+        public NewUser NewUser { get; set; } = new NewUser();
         public ICommand RegistroCommand { get; set; }
         public string Messeger { get; set; }
 
@@ -20,12 +20,12 @@ namespace Tarea01.ViewModels
         {
             RegistroCommand = new Command(async() =>
             {
-                if (String.IsNullOrEmpty(newUser.Username) || String.IsNullOrEmpty(newUser.Email) ||
-                 String.IsNullOrEmpty(newUser.Password) || String.IsNullOrEmpty(newUser.PasswordConfirmed))
+                if (String.IsNullOrEmpty(NewUser.Username) || String.IsNullOrEmpty(NewUser.Email) ||
+                 String.IsNullOrEmpty(NewUser.Password) || String.IsNullOrEmpty(NewUser.PasswordConfirmed))
                 {
                     Messeger = "Empty field!";
                 }
-                else if (newUser.PasswordConfirmed != newUser.Password)
+                else if (NewUser.PasswordConfirmed != NewUser.Password)
                 {
                     Messeger = "There is no match in the passwords provided!";
                 }

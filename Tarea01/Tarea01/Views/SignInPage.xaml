@@ -15,17 +15,17 @@
             <Entry x:Name="UserNameEntr" 
                    Placeholder="Username"
                    Keyboard="Default"
-                   Text="{Binding newUser.Username}"/>
+                   Text="{Binding NewUser.Username}"/>
 
                 <Entry x:Name="EmailEntr" 
                    Placeholder="Email"
-                    Text="{Binding newUser.Email}"
+                    Text="{Binding NewUser.Email}"
                Keyboard="Email"/>
 
 
                 <Entry x:Name="PasswordEntr" 
                    Placeholder="Password"
-                    Text="{Binding newUser.Password}"
+                    Text="{Binding NewUser.Password}"
                Keyboard="Default"
                        IsPassword="True"/>
                 
@@ -34,7 +34,7 @@
                    Placeholder="Confirm Password"
                Keyboard="Default"
                        IsPassword="True"
-                   Text="{Binding newUser.PasswordConfirmed}"/>
+                   Text="{Binding NewUser.PasswordConfirmed}"/>
 
                 <Button BackgroundColor="#6441A4"
                     Text="Sign In!"

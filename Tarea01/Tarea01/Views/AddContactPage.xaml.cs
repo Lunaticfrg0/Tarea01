@@ -10,19 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace Tarea01.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoggedUserPage : ContentPage
+    public partial class AddContactPage : ContentPage
     {
-        public LoggedUserPage()
+        public AddContactPage() 
         {
             InitializeComponent();
-            BindingContext = new LoggedUserPageViewModel();
-        }
-        async private void SendToAddView(object sender, EventArgs e)
-        {
-            await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
+            BindingContext = new AddContactPageViewModel();
         }
 
-
-        
     }
 }
