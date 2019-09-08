@@ -22,8 +22,8 @@ namespace Tarea01.ViewModels
                await App.Current.MainPage.Navigation.PopAsync();
            });
             
-
         }
+      
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

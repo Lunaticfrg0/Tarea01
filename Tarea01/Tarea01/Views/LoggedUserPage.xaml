@@ -19,19 +19,24 @@
                   HasUnevenRows="True"
                   SeparatorVisibility="Default"
                   SeparatorColor="#6441A4"
+                  x:Name="ContactList"
                   >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <MenuItem Command ="{Binding ContactsOptions}"
+                            <MenuItem Command="{Binding Path=BindingContext.ContactsOptions, Source={x:Reference ContactList}}"
                                 Text="More"  
-                                CommandParameter="{Binding .}"/>
+                                CommandParameter="{Binding .}"
+                                >
+                            </MenuItem>
                             <MenuItem 
-                                Command ="{Binding ContactsOptions}"
-                                Text="Edit" 
+                                Command="{Binding Path=BindingContext.DeleteOption, Source={x:Reference ContactList}}"
+                                Text="Delete" 
                                 IsDestructive="True" 
-                                CommandParameter="{Binding .}"/>
+                                CommandParameter="{Binding .}"
+                                >
+                            </MenuItem>
                         </ViewCell.ContextActions>
                         <StackLayout Orientation="Vertical">
 

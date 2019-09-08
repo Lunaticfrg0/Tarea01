@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tarea01.Models;
 using Tarea01.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +14,11 @@ namespace Tarea01.Views
     public partial class AddContactPage : ContentPage
     {
         public AddContactPage()
+        {
+            InitializeComponent();
+            BindingContext = new AddContactPageViewModel();
+        }
+        public AddContactPage(Contacts çontact)
         {
             InitializeComponent();
             BindingContext = new AddContactPageViewModel();

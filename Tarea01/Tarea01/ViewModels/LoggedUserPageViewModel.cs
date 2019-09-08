@@ -18,6 +18,8 @@ namespace Tarea01.ViewModels
 
         public ICommand AddCommand { get; set; }
         public ICommand ContactsOptions { get; set; }
+        public ICommand DeleteOption { get; set; }
+        public ICommand EditContact { get; set; }
 
         public LoggedUserPageViewModel()
             
@@ -28,6 +30,7 @@ namespace Tarea01.ViewModels
             }));
 
             //Contact.Add(new Contacts() { Name = "Emilio", Number = "8096239275" });
+
             AddCommand = new Command(async () =>
             {
                 await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
@@ -37,20 +40,27 @@ namespace Tarea01.ViewModels
 
             ContactsOptions = new Command<Contacts>(async (Contacts) =>
             {
-                string option = await App.Current.MainPage.DisplayActionSheet("Cancel", "Cancel","Deal", "Call " + Contacts.Number, "Edit");
+                string option = await App.Current.MainPage.DisplayActionSheet(null, "Cancel",null, "Deal " + Contacts.Number, "Edit");
 
                 if (option == "Edit")
                 {
+                    
                     await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
+                    Contact.Remove(Contacts);
+
                 }
                 else
                 {
-                    Device.OpenUri(new Uri(String.Format("Telefono:{0}", Contacts.Number)));
+                    Device.OpenUri(new Uri(String.Format("Phone:{0}", Contacts.Number)));
                 }
             });
 
+            DeleteOption = new Command<Contacts>(async (Contacts) =>
+            {
+                Contact.Remove(Contacts);
+            });
 
-
+           
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
