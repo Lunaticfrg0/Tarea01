@@ -13,3 +13,4 @@ Practica #1 version mejorada
 ![Alt text](Images/Tarea03.jpg?raw=true "Title")
 ![Alt text](Images/tarea03b.jpg?raw=true "Title")
 ![Alt text](Images/tarea03c.jpg?raw=true "Title")
+![Alt text](Images/Deal.jpg?raw=true "DisplayActionSheet")
