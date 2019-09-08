@@ -51,7 +51,7 @@ namespace Tarea01.ViewModels
                 }
                 else
                 {
-                    Device.OpenUri(new Uri(String.Format("Phone:{0}", Contacts.Number)));
+                    Device.OpenUri(new Uri(String.Format("tel:{0}", Contacts.Number)));
                 }
             });
 
